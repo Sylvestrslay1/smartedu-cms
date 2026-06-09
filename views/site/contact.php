@@ -1,3 +1,8 @@
+<?php
+$mapAddress = '88QW+JJ3, Tashkent, Uzbekistan';
+$mapQuery = urlencode($mapAddress);
+?>
+
 <section class="page-head">
     <span>Aloqa</span>
     <h1>SmartEdu bilan bog‘lanish</h1>
@@ -9,14 +14,14 @@
         <h3>Kontaktlar</h3>
         <p><strong>Telefon:</strong> <?= $this->e($settings['phone'] ?? '') ?></p>
         <p><strong>Email:</strong> <?= $this->e($settings['email'] ?? '') ?></p>
-        <p><strong>Manzil:</strong> <?= $this->e($settings['address'] ?? '') ?></p>
+        <p><strong>Manzil:</strong> 88QW+JJ3, Tashkent, O‘zbekiston</p>
         <p><strong>Telegram:</strong> <?= $this->e($settings['telegram'] ?? '') ?></p>
         <p><strong>Instagram:</strong> <?= $this->e($settings['instagram'] ?? '') ?></p>
     </article>
 
     <article class="map-card">
         <iframe
-            src="https://www.google.com/maps?q=Tashkent%20Uzbekistan&output=embed"
+            src="https://www.google.com/maps?q=<?= $this->e($mapQuery) ?>&output=embed"
             width="100%"
             height="320"
             style="border:0; border-radius:18px;"
@@ -26,10 +31,10 @@
         </iframe>
 
         <strong>SmartEdu HQ</strong>
-        <span>Toshkent · IT learning center</span>
+        <span>88QW+JJ3, Tashkent, O‘zbekiston</span>
 
         <a
-            href="https://www.google.com/maps/search/?api=1&query=Tashkent%20Uzbekistan"
+            href="https://www.google.com/maps/search/?api=1&query=<?= $this->e($mapQuery) ?>"
             target="_blank"
             rel="noopener"
             class="btn btn-primary">
